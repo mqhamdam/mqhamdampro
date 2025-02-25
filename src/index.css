@@ -1,0 +1,62 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
+/* 
+  Light Mode Palette
+Primary Color: #0057D8 (Vivid Blue)
+Secondary Color: #FFC107 (Amber)
+Background: #F5F5F5 (Soft Light Gray)
+Text: #333333 (Dark Charcoal)
+Accent Color: #FF5722 (Deep Orange)
+Border/Divider: #D6D6D6 (Muted Gray)
+Button Hover: #0041A8 (Dark Blue)
+Dark Mode Palette
+Primary Color: #64B5F6 (Light Blue)
+Secondary Color: #FFCA28 (Amber)
+Background: #1E1E1E (Charcoal Black)
+Text: #E0E0E0 (Off-White)
+Accent Color: #FF7043 (Burnt Orange)
+Border/Divider: #333333 (Dark Gray)
+Button Hover: #1E88E5 (Medium Blue)
+
+*/
+
+root {
+  --primary-color: #0057d8;
+  --secondary-color: #ffc107;
+  --background: #f5f5f5;
+  --text: #333333;
+  --accent-color: #ff5722;
+  --border-divider: #d6d6d6;
+  --button-hover: #0041a8;
+
+  --dark-primary-color: #64b5f6;
+  --dark-secondary-color: #ffca28;
+  --dark-background: #1e1e1e;
+  --dark-text: #e0e0e0;
+  --dark-accent-color: #ff7043;
+  --dark-border-divider: #333333;
+  --dark-button-hover: #1e88e5;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+
+  /* Scrollbar Styles */
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--background);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+
+  
+}
+
+@theme {
+  --background: #f5f5f5;
+  --primary-color: #00adb5;
+  --card-background-light: #fefefe;
+}
