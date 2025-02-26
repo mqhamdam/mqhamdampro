@@ -44,7 +44,7 @@ import ZustandLogo from "@/assets/tech_logo/zustand_logo.svg";
 import ThreeJSLogo from "@/assets/tech_logo/threejs_logo.svg";
 /* 
 import ProfileWebm from "@/assets/profile_pic.webm"; */
-import MemojiMp4 from "@/assets/memoji.mp4";
+import MemojiWebm from "@/assets/memoji.webm";
 /* import ProfileVideo from "@/assets/profile_v.mp4"; */
 
 import AWSAssociateArchitect from "@/assets/cert/aws-certified-solutions-architect-associate.png";
@@ -99,7 +99,7 @@ export function HomePage() {
               width="400"
               height="400"
             >
-              <source src={MemojiMp4} />
+              <source src={MemojiWebm} type="video/webm" />
             </video>
             <div className="flex flex-col h-full gap-4 justify-center">
               <div className="flex items-center gap-2  ">
