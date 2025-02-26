@@ -59,7 +59,7 @@ export function HomePage() {
           {/* Home */}
           <NavBtn text={"Home"} href={"/"} />
           {/* Blog */}
-          <NavBtn text={"Blog"} href={"blog.mqhamdam.pro/"} />
+          <NavBtn text={"Blog"} href={"https://blog.mqhamdam.pro/"} />
           {/* Projects */}
           <NavBtn text={"Projects"} href={"/projects"} />
 
