@@ -1,0 +1,67 @@
+import { Project } from '../models/project.model';
+
+export const sampleProjects: Project[] = [
+  {
+    id: '1',
+    name: 'E-commerce Platform',
+    description: 'A full-featured e-commerce platform with product listings, cart, and checkout.',
+    longDescription: 'This project involved building a scalable e-commerce solution from scratch, focusing on user experience and performance. It includes admin panels for managing products and orders.',
+    tags: ['E-commerce', 'Web Development', 'React', 'Node.js'],
+    imageUrl: 'public/vite.svg',
+    projectUrl: 'https://example.com/ecommerce',
+    sourceCodeUrl: 'https://github.com/example/ecommerce',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe API'],
+    dateAdded: '2023-05-15',
+  },
+  {
+    id: '2',
+    name: 'Personal Portfolio Website',
+    description: 'A responsive personal portfolio website to showcase projects and skills.',
+    tags: ['Portfolio', 'Web Development', 'Angular', 'TypeScript'],
+    imageUrl: 'public/vite.svg',
+    projectUrl: 'https://example.com/portfolio',
+    sourceCodeUrl: 'https://github.com/example/portfolio',
+    technologies: ['Angular', 'TypeScript', 'HTML', 'CSS'],
+    dateAdded: '2022-12-01',
+  },
+  {
+    id: '3',
+    name: 'Task Management App',
+    description: 'A simple task management application to organize daily tasks.',
+    longDescription: 'This app allows users to create, edit, delete, and track the status of their tasks. It features a clean and intuitive user interface.',
+    tags: ['Productivity', 'Web App', 'Vue.js', 'Firebase'],
+    projectUrl: 'https://example.com/taskapp',
+    technologies: ['Vue.js', 'Firebase', 'JavaScript'],
+    dateAdded: '2023-08-20',
+  },
+  {
+    id: '4',
+    name: 'Blog Platform',
+    description: 'A dynamic blog platform with features for creating and managing articles.',
+    tags: ['Blogging', 'Content Management', 'Next.js', 'GraphQL'],
+    imageUrl: 'public/vite.svg',
+    sourceCodeUrl: 'https://github.com/example/blog',
+    technologies: ['Next.js', 'React', 'GraphQL', 'Apollo Client', 'PostgreSQL'],
+    dateAdded: '2023-01-10',
+  },
+  {
+    id: '5',
+    name: 'Weather Dashboard',
+    description: 'A weather dashboard that displays current weather and forecasts for multiple locations.',
+    longDescription: 'Users can search for cities and view detailed weather information, including temperature, humidity, and wind speed. The application uses a third-party weather API.',
+    tags: ['Weather', 'Utility', 'JavaScript', 'API Integration'],
+    projectUrl: 'https://example.com/weather',
+    technologies: ['JavaScript', 'HTML', 'CSS', 'OpenWeatherMap API'],
+    dateAdded: '2022-11-05',
+  },
+  {
+    id: '6',
+    name: 'Recipe Finder',
+    description: 'A web application for discovering and saving recipes.',
+    tags: ["Food", "Lifestyle", "Svelte", "API"],
+    imageUrl: 'public/vite.svg',
+    sourceCodeUrl: 'https://github.com/example/recipe-finder',
+    technologies: ["Svelte", "Spoonacular API", "JavaScript"],
+    dateAdded: '2023-09-01'
+  }
+];

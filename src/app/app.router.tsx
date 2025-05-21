@@ -4,9 +4,13 @@ import {
   Route,
 } from "react-router";
 import { HomePage } from "@/ui/pages/home.page";
+import { ProjectsPage } from "@/ui/pages/projects.page";
 
 export const appRouter = createBrowserRouter(
   /* include base routename `/mqhamdampro */
-  createRoutesFromChildren([<Route path="/" element={<HomePage />} />]),
+  createRoutesFromChildren([
+    <Route path="/" element={<HomePage />} />,
+    <Route path="/projects" element={<ProjectsPage />} />
+  ]),
   
 );
