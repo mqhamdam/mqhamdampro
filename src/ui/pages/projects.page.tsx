@@ -20,16 +20,15 @@ const ProjectsPage: React.FC = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [sortOption, setSortOption] = useState<string>('date-desc');
   const [allTags, setAllTags] = useState<string[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false); // Added isLoading state
+  const [isLoading, setIsLoading] = useState<boolean>(false); 
 
   useEffect(() => {
-    // Simulate loading for demonstration if needed, e.g.:
-    // setIsLoading(true);
-    // setTimeout(() => {
-    //   setAllTags(getAllUniqueTags(sampleProjects));
-    //   setIsLoading(false);
-    // }, 1000);
-    setAllTags(getAllUniqueTags(sampleProjects));
+    setIsLoading(true); 
+    const timer = setTimeout(() => {
+      setAllTags(getAllUniqueTags(sampleProjects));
+      setIsLoading(false); 
+    }, 50); 
+    return () => clearTimeout(timer); 
   }, []);
 
   const handleTagToggle = (tag: string) => {
