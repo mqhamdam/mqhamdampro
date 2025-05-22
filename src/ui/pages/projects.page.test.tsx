@@ -1,5 +1,4 @@
-import React from 'react';
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import ProjectsPage from './projects.page'; // Assuming this is the correct path
 import { sampleProjects } from '../../data/projects'; 
@@ -83,7 +82,7 @@ describe('ProjectsPage', () => {
   test('should filter by a single tag', async () => {
     renderProjectsPage();
     const tagToSelect = 'React'; // Assuming 'React' is a tag in sampleProjects
-    const tagButton = screen.getByRole('button', { name: tagToSelect });
+    const tagButton = await screen.findByRole('button', { name: tagToSelect });
 
     await userEvent.click(tagButton);
 
@@ -144,8 +143,10 @@ describe('ProjectsPage', () => {
     const tag1 = 'React'; 
     const tag2 = 'E-commerce'; // Choose tags that appear together in at least one project
 
-    await userEvent.click(screen.getByRole('button', { name: tag1 }));
-    await userEvent.click(screen.getByRole('button', { name: tag2 }));
+    const tagButton1 = await screen.findByRole('button', { name: tag1 });
+    await userEvent.click(tagButton1);
+    const tagButton2 = await screen.findByRole('button', { name: tag2 });
+    await userEvent.click(tagButton2);
 
     const projectsWithBothTags = sampleProjects.filter(p => p.tags.includes(tag1) && p.tags.includes(tag2));
     const projectsWithoutBothTags = sampleProjects.filter(p => !(p.tags.includes(tag1) && p.tags.includes(tag2)));
@@ -161,7 +162,8 @@ describe('ProjectsPage', () => {
   test('should clear selected tags', async () => {
     renderProjectsPage();
     const tagToSelect = 'React';
-    await userEvent.click(screen.getByRole('button', { name: tagToSelect }));
+    const tagButton = await screen.findByRole('button', { name: tagToSelect });
+    await userEvent.click(tagButton);
     
     // Ensure the tag is selected and filtering is applied
     const projectWithTag = sampleProjects.find(p => p.tags.includes(tagToSelect));

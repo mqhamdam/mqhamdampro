@@ -1,5 +1,4 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import ProjectCard from './project-card';
 import { sampleProjects } from '../../data/projects'; // Adjust path as needed
 import { Project } from '../../models/project.model';
@@ -21,16 +20,25 @@ describe('ProjectCard', () => {
     render(<ProjectCard project={defaultProject} />);
     expect(screen.getByText(defaultProject.name)).toBeInTheDocument();
     expect(screen.getByText(defaultProject.description)).toBeInTheDocument();
-    defaultProject.technologies.forEach(tech => {
-      expect(screen.getByText(tech)).toBeInTheDocument();
-    });
+    
+    const technologiesSection = screen.getByText('Technologies:').parentElement;
+    expect(technologiesSection).toBeInTheDocument();
+    if (technologiesSection) { // Type guard
+      defaultProject.technologies.forEach(tech => {
+        expect(within(technologiesSection).getByText(tech)).toBeInTheDocument();
+      });
+    }
   });
 
   test('renders project tags', () => {
     render(<ProjectCard project={defaultProject} />);
-    defaultProject.tags.forEach(tag => {
-      expect(screen.getByText(tag)).toBeInTheDocument();
-    });
+    const tagsSection = screen.getByText('Tags:').parentElement;
+    expect(tagsSection).toBeInTheDocument();
+    if (tagsSection) { // Type guard
+      defaultProject.tags.forEach(tag => {
+        expect(within(tagsSection).getByText(tag)).toBeInTheDocument();
+      });
+    }
   });
 
   test('renders "View Project" and "Source Code" links if URLs are provided', () => {
@@ -69,8 +77,7 @@ describe('ProjectCard', () => {
     // For now, let's check that the image role is not present for the main project image.
     expect(screen.queryByRole('img', { name: projectWithoutOptionalFields.name })).toBeNull();
     // And we can check for the presence of the SVG path data if it's unique enough, or a test-id on the placeholder div
-    const placeholderSvg = screen.getByRole('graphics-document'); // svgs often get this role implicitly
-    expect(placeholderSvg).toBeInTheDocument(); 
+    expect(screen.getByTestId('image-placeholder')).toBeInTheDocument();
   });
 
   test('renders all provided technologies and tags', () => {
@@ -80,12 +87,20 @@ describe('ProjectCard', () => {
         tags: ["TagA", "TagB", "TagC", "TagD"]
     };
     render(<ProjectCard project={projectWithManyItems} />);
-    projectWithManyItems.technologies.forEach(tech => {
-        expect(screen.getByText(tech)).toBeInTheDocument();
-    });
-    projectWithManyItems.tags.forEach(tag => {
-        expect(screen.getByText(tag)).toBeInTheDocument();
-    });
+    const technologiesSection = screen.getByText('Technologies:').parentElement;
+    expect(technologiesSection).toBeInTheDocument();
+    if (technologiesSection) {
+        projectWithManyItems.technologies.forEach(tech => {
+            expect(within(technologiesSection).getByText(tech)).toBeInTheDocument();
+        });
+    }
+    const tagsSection = screen.getByText('Tags:').parentElement;
+    expect(tagsSection).toBeInTheDocument();
+    if (tagsSection) {
+        projectWithManyItems.tags.forEach(tag => {
+            expect(within(tagsSection).getByText(tag)).toBeInTheDocument();
+        });
+    }
   });
 
 });
