@@ -1,3 +1,4 @@
+
 import { useState, useMemo } from "react";
 import projectsData from "@/data/projects.json";
 import { ProjectCard, SearchAndFilter, EmptyState, type Project } from "@/components";
@@ -61,5 +62,6 @@ function ProjectsPage() {
     </Layout>
   );
 }
+
 
 export default ProjectsPage;

@@ -15,6 +15,7 @@ const _ProjectDetailsPageRoute = (
   <Route path="/projects/:id" element={<ProjectDetailsPage />} />
 );
 
+
 export const appRouter = createBrowserRouter(
   /* include base routename `/mqhamdampro */
   createRoutesFromChildren([
@@ -22,4 +23,5 @@ export const appRouter = createBrowserRouter(
     _ProjectsPageRoute, 
     _ProjectDetailsPageRoute
   ])
+
 );
