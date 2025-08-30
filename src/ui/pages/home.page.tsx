@@ -1,3 +1,15 @@
+import { Divider, Tooltip } from "antd";
+import {
+  BirthdayCakeIcon,
+  Download04Icon,
+  Location01Icon,
+  Mortarboard01Icon,
+  Share01Icon,
+} from "hugeicons-react";
+
+import { SocialLink, SkillTag, CertTag } from "@/components";
+import { Layout } from "@/layouts";
+
 import GithubIcon from "@/assets/social_icons/github_icon_48.png";
 import LinkedInIcon from "@/assets/social_icons/linkedin_icon_48.png";
 import GmailIcon from "@/assets/social_icons/gmail_icon_48.png";
@@ -9,39 +21,8 @@ import TajikistanIcon from "@/assets/country_icons/tajikistan_icon_32.png";
 import RussiaIcon from "@/assets/country_icons/russian_icon_32.png";
 import USAIcon from "@/assets/country_icons/usa_icon_32.png";
 import SouthKoreaIcon from "@/assets/country_icons/south_korea_icon_32.png";
-import { Divider, Tooltip } from "antd";
-import {
-  BirthdayCakeIcon,
-  Download04Icon,
-  Location01Icon,
-  Mortarboard01Icon,
-  Share01Icon,
-} from "hugeicons-react";
 
-import FlutterLogo from "@/assets/tech_logo/flutter_logo.svg";
-import DartLogo from "@/assets/tech_logo/dart_logo.svg";
-import BlocLogo from "@/assets/tech_logo/bloc_logo.svg";
-import GitLogo from "@/assets/tech_logo/git_logo.svg";
-import FirebaseLogo from "@/assets/tech_logo/firebase_logo.svg";
-import AWSLogo from "@/assets/tech_logo/aws_logo.svg";
-import DockerLogo from "@/assets/tech_logo/docker_logo.svg";
-import PythonLogo from "@/assets/tech_logo/python_logo.svg";
-import FastAPILogo from "@/assets/tech_logo/fastapi_logo.svg";
-import GraphQLLogo from "@/assets/tech_logo/graphql_logo.svg";
-import LinuxLogo from "@/assets/tech_logo/linux_logo.svg";
-import MongoDBLogo from "@/assets/tech_logo/mongodb_logo.svg";
-import NextJSLogo from "@/assets/tech_logo/nextjs_logo.svg";
-import NodeJSLogo from "@/assets/tech_logo/nodejs_logo.svg";
-import ReactJSLogo from "@/assets/tech_logo/react_logo.svg";
-import TailwindCSSLogo from "@/assets/tech_logo/tailwind_logo.svg";
-import TraefikProxyLogo from "@/assets/tech_logo/traefik_proxy_logo.svg";
-import NGINXLogo from "@/assets/tech_logo/nginx_logo.svg";
-import TypeScriptLogo from "@/assets/tech_logo/ts_logo.svg";
-import UnityLogo from "@/assets/tech_logo/unity_logo.svg";
-import BlenderLogo from "@/assets/tech_logo/blender_logo_512x512.png";
-import ViteJSLogo from "@/assets/tech_logo/vitejs_logo.svg";
-import ZustandLogo from "@/assets/tech_logo/zustand_logo.svg";
-import ThreeJSLogo from "@/assets/tech_logo/threejs_logo.svg";
+import TechLogos from "@/utils/logos";
 /* 
 import ProfileWebm from "@/assets/profile_pic.webm"; */
 import MemojiWebm from "@/assets/memoji.webm";
@@ -52,21 +33,37 @@ import AWSAssociateDeveloper from "@/assets/cert/aws-certified-developer-associa
 import AWSServerless from "@/assets/cert/aws-knowledge-serverless.png";
 
 export function HomePage() {
+  // Tech stack data for cleaner rendering
+  const techStack = [
+    { name: "Flutter", tooltip: "Flutter Framework" },
+    { name: "Dart", tooltip: "Dart Language" },
+    { name: "BLoC", tooltip: "BLoC State Management" },
+    { name: "Git", tooltip: "Git Version Control" },
+    { name: "Firebase", tooltip: "Firebase Cloud Services" },
+    { name: "AWS", tooltip: "Amazon Web Services" },
+    { name: "Docker", tooltip: "Docker Containerization" },
+    { name: "Python", tooltip: "Python Programming Language" },
+    { name: "FastAPI", tooltip: "FastAPI Framework" },
+    { name: "GraphQL", tooltip: "GraphQL Query Language" },
+    { name: "Linux", tooltip: "Linux Operating System" },
+    { name: "MongoDB", tooltip: "MongoDB Database" },
+    { name: "Next.js", tooltip: "NextJS Framework" },
+    { name: "Node.js", tooltip: "NodeJS Framework" },
+    { name: "React", tooltip: "ReactJS Framework" },
+    { name: "Tailwind CSS", tooltip: "TailwindCSS Framework" },
+    { name: "Traefik", tooltip: "Traefik Proxy Server" },
+    { name: "NGINX", tooltip: "NGINX Proxy Server" },
+    { name: "TypeScript", tooltip: "TypeScript Language" },
+    { name: "Unity", tooltip: "Unity Game Engine" },
+    { name: "Blender", tooltip: "Blender 3D Software" },
+    { name: "Vite", tooltip: "ViteJS Framework" },
+    { name: "Zustand", tooltip: "Zustand State Management" },
+    { name: "Three.js", tooltip: "ThreeJS Framework" }
+  ];
+
   return (
-    <div>
-      <div className="flex flex-col ">
-        <div className="  h-[70px] w-full flex justify-center items-center gap-8">
-          {/* Home */}
-          <NavBtn text={"Home"} href={"/"} />
-          {/* Blog */}
-          <NavBtn text={"Blog"} href={"https://blog.mqhamdam.pro/"} />
-          {/* Projects */}
-          <NavBtn text={"Projects"} href={"/projects"} />
-
-          {/* Contact */}
-          <NavBtn text={"Contact"} href={"/contact"} />
-        </div>
-
+    <Layout>
+      <div className="flex flex-col mt-10 ">
         <div className="bg-(--card-background-light) flex mx-auto shadow rounded-3xl  py-10 px-4 w-[1100px] relative">
           {/* Top right corner elements */}
           <div className="absolute top-6 right-6">
@@ -191,126 +188,14 @@ export function HomePage() {
             </Divider>
 
             <div className="flex   mt-2 flex-wrap gap-4">
-              <SkillTag
-                logo={FlutterLogo}
-                tooltipMsg={"Flutter Framework"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={DartLogo}
-                tooltipMsg={"Dart Language"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={BlocLogo}
-                tooltipMsg={"BLoC State Management"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={GitLogo}
-                tooltipMsg={"Git Version Control"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={FirebaseLogo}
-                tooltipMsg={"Firebase Cloud Services"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={AWSLogo}
-                tooltipMsg={"Amazon Web Services"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={DockerLogo}
-                tooltipMsg={"Docker Containerization"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={PythonLogo}
-                tooltipMsg={"Python Programming Language"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={FastAPILogo}
-                tooltipMsg={"FastAPI Framework"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={GraphQLLogo}
-                tooltipMsg={"GraphQL Query Language"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={LinuxLogo}
-                tooltipMsg={"Linux Operating System"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={MongoDBLogo}
-                tooltipMsg={"MongoDB Database"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={NextJSLogo}
-                tooltipMsg={"NextJS Framework"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={NodeJSLogo}
-                tooltipMsg={"NodeJS Framework"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={ReactJSLogo}
-                tooltipMsg={"ReactJS Framework"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={TailwindCSSLogo}
-                tooltipMsg={"TailwindCSS Framework"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={TraefikProxyLogo}
-                tooltipMsg={"Traefik Proxy Server"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={NGINXLogo}
-                tooltipMsg={"NGINX Proxy Server"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={TypeScriptLogo}
-                tooltipMsg={"TypeScript Language"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={UnityLogo}
-                tooltipMsg={"Unity Game Engine"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={BlenderLogo}
-                tooltipMsg={"Blender 3D Software"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={ViteJSLogo}
-                tooltipMsg={"ViteJS Framework"}
-                href="flutter.dev"
-              />
-              <SkillTag
-                logo={ZustandLogo}
-                tooltipMsg={"Zustand State Management"}
-                href="flutter.dev"
-              />{" "}
-              <SkillTag
-                logo={ThreeJSLogo}
-                tooltipMsg={"ThreeJS Framework"}
-                href="flutter.dev"
-              />
+              {techStack.map((tech) => (
+                <SkillTag
+                  key={tech.name}
+                  logo={TechLogos.getLogoByKeyword(tech.name)}
+                  tooltipMsg={tech.tooltip}
+                  href="flutter.dev"
+                />
+              ))}
             </div>
             {/* horizontal divider */}
             <div className="mt-6"></div>
@@ -332,78 +217,6 @@ export function HomePage() {
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-/*  */
-export function NavBtn({ text, href }: { text: string; href: string }) {
-  return (
-    <a
-      href={href}
-      className="text-black px-4 py-1 text-lg   tracking-widest uppercase   hover:text-(--primary-color) transition-colors
-        border-1   rounded-4xl border-transparent hover:border-(--primary-color)
-      "
-    >
-      {text}
-    </a>
-  );
-}
-
-export function SocialLink({
-  href,
-  icon,
-  label,
-}: {
-  href: string;
-  icon: string;
-  label: string;
-}) {
-  return (
-    <a
-      href={href}
-      className="flex items-end hover:scale-95 transition-transform duration-300 ease-in-out   py-2 px-3 gap-2  "
-    >
-      <img src={icon} alt={label} className="h-[26px]   " />
-      <div className="tracking-widest">{label}</div>
-    </a>
-  );
-}
-
-export function SkillTag({
-  logo,
-  tooltipMsg,
-}: {
-  logo: string;
-  href: string;
-  tooltipMsg: string;
-}) {
-  return (
-    <Tooltip title={tooltipMsg}>
-      <img
-        src={logo}
-        alt={tooltipMsg}
-        className="h-8 w-8 hover:scale-90 transition-transform duration-300 ease-linear"
-      />
-    </Tooltip>
-  );
-}
-
-export function CertTag({
-  certification,
-  tooltip,
-}: {
-  certification: string;
-  tooltip: string;
-}) {
-  return (
-    <Tooltip title={tooltip}>
-      {" "}
-      <img
-        src={certification}
-        alt={tooltip}
-        className="h-32 w-32 hover:scale-90 transition-transform duration-300 ease-linear"
-      />
-    </Tooltip>
+    </Layout>
   );
 }
