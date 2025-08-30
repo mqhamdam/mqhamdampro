@@ -45,14 +45,26 @@ root {
 
   /* Scrollbar Styles */
   scrollbar-width: thin;
-  scrollbar-color: var(--primary-color) var(--background);
 }
 
 body {
   background-color: var(--background);
   color: var(--text);
+}
 
-  
+/* Line clamp utilities for text truncation */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @theme {
