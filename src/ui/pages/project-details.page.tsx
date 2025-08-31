@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Layout } from "@/layouts";
-import { 
-  SEOHead, 
-  LoadingSpinner, 
+import {
+  SEOHead,
+  LoadingSpinner,
   ProjectHero,
   TechnologiesSection,
   FeaturesSection,
-  TechnicalHighlights,
   ProjectGallery,
   type Project,
-  type TechnicalHighlight
 } from "@/components";
 import { ArrowLeft01Icon } from "hugeicons-react";
 import { Divider } from "antd";
@@ -67,24 +65,6 @@ export function ProjectDetailsPage() {
     );
   }
 
-  // Sample project features and technical details for showcase
-  const projectFeatures = [
-    "Responsive design for all devices",
-    "Modern UI/UX with smooth animations",
-    "SEO optimized with meta tags",
-    "Fast loading with optimized assets",
-    "Clean, maintainable code architecture",
-    "Cross-browser compatibility",
-  ];
-
-  const technicalHighlights: TechnicalHighlight[] = [
-    { label: "Frontend", value: "React 19 + TypeScript" },
-    { label: "Styling", value: "Tailwind CSS + Ant Design" },
-    { label: "Build Tool", value: "Vite for fast development" },
-    { label: "Architecture", value: "Component-based design" },
-    { label: "Performance", value: "Optimized bundle size" },
-    { label: "Code Quality", value: "ESLint + TypeScript" },
-  ];
 
   return (
     <Layout>
@@ -107,13 +87,17 @@ export function ProjectDetailsPage() {
         <TechnologiesSection technologies={project.keywords} />
 
         {/* Project Features */}
-        <FeaturesSection features={projectFeatures} />
+        {project.key_features && project.key_features.length > 0 && (
+          <FeaturesSection features={project.key_features} />
+        )}
 
         {/* Technical Highlights */}
-        <TechnicalHighlights highlights={technicalHighlights} />
+        {/* <TechnicalHighlights highlights={technicalHighlights} /> */}
 
         {/* Project Gallery/Screenshots */}
-        <ProjectGallery />
+        {project.image_gallery && project.image_gallery.length > 0 && (
+          <ProjectGallery images={project.image_gallery} />
+        )}
 
         {/* Related Projects */}
         <section>

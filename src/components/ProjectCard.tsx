@@ -6,7 +6,10 @@ interface Project {
   keywords: string[];
   github?: string;
   demo?: string;
+  image_gallery?: string[];
+  key_features?: string[];
   featured: boolean;
+  isPersonal: boolean;
   status: string;
   startDate: string;
   endDate: string;
