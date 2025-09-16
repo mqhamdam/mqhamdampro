@@ -12,7 +12,6 @@ import { Layout } from "@/layouts";
 
 import GithubIcon from "@/assets/social_icons/github_icon_48.png";
 import LinkedInIcon from "@/assets/social_icons/linkedin_icon_48.png";
-import GmailIcon from "@/assets/social_icons/gmail_icon_48.png";
 import TelegramIcon from "@/assets/social_icons/telegram_icon_48.png";
 import YoutubeIcon from "@/assets/social_icons/youtube_icon_48.png";
 import InstagramIcon from "@/assets/social_icons/instagram_icon_48.png";
@@ -58,7 +57,7 @@ export function HomePage() {
     { name: "Blender", tooltip: "Blender 3D Software" },
     { name: "Vite", tooltip: "ViteJS Framework" },
     { name: "Zustand", tooltip: "Zustand State Management" },
-    { name: "Three.js", tooltip: "ThreeJS Framework" }
+    { name: "Three.js", tooltip: "ThreeJS Framework" },
   ];
 
   return (
@@ -207,12 +206,33 @@ export function HomePage() {
             </Divider>
             <div className="flex gap-1   ">
               {/* Social Media */}
-              <SocialLink href={""} label={"Github"} icon={GithubIcon} />{" "}
-              <SocialLink href={""} label="LinkedIn" icon={LinkedInIcon} />{" "}
-              <SocialLink href={""} label="Gmail" icon={GmailIcon} />{" "}
-              <SocialLink href={""} label="Telegram" icon={TelegramIcon} />{" "}
-              <SocialLink href={""} label="Youtube" icon={YoutubeIcon} />{" "}
-              <SocialLink href={""} label="Instagram" icon={InstagramIcon} />{" "}
+              <SocialLink
+                href={"https://github.com/mqhamdam"}
+                label={"Github"}
+                icon={GithubIcon}
+              />{" "}
+              <SocialLink
+                href={"https://www.linkedin.com/in/mqhamdam"}
+                label="LinkedIn"
+                icon={LinkedInIcon}
+              />{" "}
+              {/* <SocialLink href={""} label="Gmail" icon={GmailIcon} />{" "} */}{" "}
+              {/* not safe */}
+              <SocialLink
+                href={"https://t.me/mqhamdam"}
+                label="Telegram"
+                icon={TelegramIcon}
+              />{" "}
+              <SocialLink
+                href={"https://www.youtube.com/@mqhamdam"}
+                label="Youtube"
+                icon={YoutubeIcon}
+              />{" "}
+              <SocialLink
+                href={"https://www.instagram.com/hamdammq/"}
+                label="Instagram"
+                icon={InstagramIcon}
+              />{" "}
             </div>
           </div>
         </div>
